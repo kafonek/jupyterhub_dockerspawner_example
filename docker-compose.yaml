@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  jupyterhub:
+    container_name: jupyterhub
+    build: hub
+    ports:
+      - "8000:8000"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+        - jhub
+
+networks:
+  jhub:
+    name: jhub
